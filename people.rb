@@ -1,7 +1,7 @@
 class Person
   def initialize(name)
     @name = name
-
+    greeting
   end
 
   def greeting
@@ -17,9 +17,6 @@ class Student < Person
     super(name)
   end
 
-  def greeting
-    puts "Hi, my name is #{@name}"
-  end
 
   def learn
     puts "I get it!!"
