@@ -6,24 +6,27 @@ class System
   #   @@bodies = []
   #   add
   # end
+  def all
+    @@bodies
+  end
 
-  def add
+  def add(x)
     #celestial body to the list
-    @@bodies << Body.new(name, mass)
+    @@bodies << x
 
   end
 
   def total_mass
     # mass of all the bodies
     @total_mass = 0
-    @bodies.each do |body|
+    @@bodies.each do |body|
       @total_mass += body.mass
     end
     @total_mass
   end
 
   def method_name
-    @bodies.each do |body|
+    @@bodies.each do |body|
     @method_name = body.name
     puts "#{@method_name}"
     end
@@ -89,3 +92,11 @@ p s=Star.new("Sun",33)
 p m=Moon.new("moon",66)
 p m.planet
 p m
+
+p sys = System.new
+p sys.add(s)
+p sys.add(p)
+p sys.add(m)
+p sys.all
+p sys.total_mass
+p sys.method_name
